@@ -5,7 +5,9 @@ setup(
     version="0.2.0",
     packages=find_packages(),
     include_package_data=True,
-    install_requires=[],
+    install_requires=[
+        "esa @ git+https://github.com/IslasGECI/esa.git"
+    ],
     entry_points={
         "console_scripts": ["traps_camera=eradication_success_assessment.get_required_effort:app"]
     },

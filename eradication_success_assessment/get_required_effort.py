@@ -7,6 +7,7 @@ import numpy as np
 import pandas as pd
 import typer
 import json
+from esa import make_fit
 
 app = typer.Typer()
 
