@@ -34,28 +34,6 @@ def get_required_effort(
     return output
 
 
-def make_fit(data, capture_date, seed, n_bootstrapping, return_effort):
-    if seed:
-        np.random.seed(3)
-
-    data_before_capture = _get_date_before_capture(data, capture_date)
-    success_probability: float = 0.99
-    required_effort = calculate_required_effort(
-        data_before_capture, n_bootstrapping, success_probability
-    )
-
-    p_value_complement: float = 0.95
-    effort_without_sighted = data_before_capture["Cantidad_de_trampas_activas"].sum()
-    bound_effort = np.quantile(required_effort, p_value_complement).astype(int)
-    output = export_output(
-        p_value_complement, bound_effort, success_probability, effort_without_sighted
-    )
-    if return_effort:
-        required_effort = {"effort": list(required_effort)}
-        output.update(required_effort)
-    return output
-
-
 def calculate_required_effort(data_before_capture, n_bootstrapping, success_probability):
     effort_per_sighting = calculate_effort_per_sighting(data_before_capture)
     n_effort_per_sighting = len(effort_per_sighting)
