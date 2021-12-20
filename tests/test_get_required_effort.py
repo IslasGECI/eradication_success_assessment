@@ -20,50 +20,6 @@ d: dict = {
 dates: pd.DataFrame = pd.DataFrame(data=d)
 
 
-def test_make_fit():
-    expected_output = {
-        "effort_without_sighted": 3,
-        "required_effort": 3,
-        "significance_level": 0.050000000000000044,
-        "success_probability": 0.99,
-        "effort": [
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-            3.0,
-        ],
-    }
-
-    obtained_output = make_fit(dates, capture_date, True, n_bootstrapping=30, return_effort=True)
-    assert obtained_output == expected_output
-
-
 OUTPUT_TESTS_2 = '{"required_effort": 381, "success_probability": 0.99, "significance_level": 0.050000000000000044, "effort_without_sighted": 681}\n'
 
 
