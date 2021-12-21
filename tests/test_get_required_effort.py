@@ -3,7 +3,6 @@ import pandas as pd
 from pandas._testing import assert_frame_equal
 from eradication_success_assessment import get_required_effort
 from eradication_success_assessment import plot_histogram_effort
-from eradication_success_assessment.get_required_effort import _add_sighting
 from eradication_success_assessment.get_required_effort import _clean_effort
 from eradication_success_assessment.get_required_effort import app
 
@@ -42,17 +41,6 @@ d_2: dict = {
     "sighting": [1, 1, 1, 1],
 }
 dates_2: pd.DataFrame = pd.DataFrame(data=d_2)
-
-
-def test_add_sighting():
-    output = _add_sighting(dates)
-    assert_frame_equal(dates_2, output, check_dtype=False)
-
-
-@pytest.mark.mpl_image_compare
-def test_plot_histogram_effort():
-    obtainad_histogram = plot_histogram_effort(path="tests/data/salidita.json")
-    return obtainad_histogram
 
 
 def test__clean_effort():
