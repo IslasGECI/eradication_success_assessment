@@ -1,8 +1,5 @@
-import pytest
 import pandas as pd
-from pandas._testing import assert_frame_equal
 from eradication_success_assessment import get_required_effort
-from eradication_success_assessment import plot_histogram_effort
 from eradication_success_assessment.get_required_effort import _clean_effort
 from eradication_success_assessment.get_required_effort import app
 

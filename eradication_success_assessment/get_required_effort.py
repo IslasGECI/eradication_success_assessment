@@ -1,12 +1,10 @@
 #!/usr/bin/env python
 #
 #
-from scipy.stats import genextreme
-import numpy as np
 import pandas as pd
 import typer
 import json
-from esa import make_fit, plot_histogram_effort
+import esa
 
 app = typer.Typer()
 
@@ -28,7 +26,7 @@ def get_required_effort(
 
     datafile: str = name
     data = pd.read_csv(datafile)
-    output = make_fit(data, capture_date, seed, n_bootstrapping, return_effort)
+    output = esa.make_fit(data, capture_date, seed, n_bootstrapping, return_effort)
     print(json.dumps(output))
     return output
 
@@ -74,7 +72,7 @@ def version():
 
 @app.command()
 def plot_histogram_effort(path: str = "tests/data/salidita.json"):
-    plot_histogram_effort(path)
+    esa.plot_histogram_effort(path)
 
 
 def _clean_effort(data):
