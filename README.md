@@ -1,5 +1,7 @@
 # Eradication success assessment
 
+This is the source code repository of the command-line interface (CLI) for the [esa](https://github.com/IslasGECI/esa) module.
+
 
 [![codecov](https://codecov.io/gh/IslasGECI/eradication_success_assessment/branch/master/graph/badge.svg)](https://codecov.io/gh/IslasGECI/eradication_success_assessment)
 ![example branch
